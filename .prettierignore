@@ -1,0 +1,8 @@
+node_modules
+dist
+.nx
+coverage
+.storybook-static
+*.md
+
+.angular

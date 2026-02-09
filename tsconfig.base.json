@@ -1,0 +1,50 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["ES2022", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@design-system/components/button": ["libs/design-system/components/button/src/index.ts"],
+      "@design-system/components/card": ["libs/design-system/components/card/src/index.ts"],
+      "@design-system/components/checkbox": ["libs/design-system/components/checkbox/src/index.ts"],
+      "@design-system/components/data-display": [
+        "libs/design-system/components/data-display/src/index.ts"
+      ],
+      "@design-system/components/feedback": ["libs/design-system/components/feedback/src/index.ts"],
+      "@design-system/components/input": ["libs/design-system/components/input/src/index.ts"],
+      "@design-system/components/layout": ["libs/design-system/components/layout/src/index.ts"],
+      "@design-system/components/modal": ["libs/design-system/components/modal/src/index.ts"],
+      "@design-system/components/navigation": [
+        "libs/design-system/components/navigation/src/index.ts"
+      ],
+      "@design-system/components/radio": ["libs/design-system/components/radio/src/index.ts"],
+      "@design-system/components/select": ["libs/design-system/components/select/src/index.ts"],
+      "@design-system/components/typography": [
+        "libs/design-system/components/typography/src/index.ts"
+      ],
+      "@design-system/core": ["libs/design-system/core/src/index.ts"],
+      "@design-system/testing": ["libs/design-system/testing/src/index.ts"],
+      "@design-system/tokens": ["libs/design-system/tokens/src/index.ts"],
+      "core": ["libs/design-system/core/src/index.ts"],
+      "tokens": ["libs/design-system/tokens/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

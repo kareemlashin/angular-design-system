@@ -1,0 +1,224 @@
+// Design System - Color Tokens
+// Three-tier system: Primitive -> Semantic -> Component
+
+// ============================================================================
+// PRIMITIVE COLOR PALETTE
+// ============================================================================
+
+// Blue Scale
+$primitive-blue-50: #eff6ff;
+$primitive-blue-100: #dbeafe;
+$primitive-blue-200: #bfdbfe;
+$primitive-blue-300: #93c5fd;
+$primitive-blue-400: #60a5fa;
+$primitive-blue-500: #3b82f6;
+$primitive-blue-600: #2563eb;
+$primitive-blue-700: #1d4ed8;
+$primitive-blue-800: #1e40af;
+$primitive-blue-900: #1e3a8a;
+$primitive-blue-950: #172554;
+
+// Gray Scale
+$primitive-gray-50: #f9fafb;
+$primitive-gray-100: #f3f4f6;
+$primitive-gray-200: #e5e7eb;
+$primitive-gray-300: #d1d5db;
+$primitive-gray-400: #9ca3af;
+$primitive-gray-500: #6b7280;
+$primitive-gray-600: #4b5563;
+$primitive-gray-700: #374151;
+$primitive-gray-800: #1f2937;
+$primitive-gray-900: #111827;
+$primitive-gray-950: #030712;
+
+// Red Scale
+$primitive-red-50: #fef2f2;
+$primitive-red-100: #fee2e2;
+$primitive-red-200: #fecaca;
+$primitive-red-300: #fca5a5;
+$primitive-red-400: #f87171;
+$primitive-red-500: #ef4444;
+$primitive-red-600: #dc2626;
+$primitive-red-700: #b91c1c;
+$primitive-red-800: #991b1b;
+$primitive-red-900: #7f1d1d;
+$primitive-red-950: #450a0a;
+
+// Green Scale
+$primitive-green-50: #f0fdf4;
+$primitive-green-100: #dcfce7;
+$primitive-green-200: #bbf7d0;
+$primitive-green-300: #86efac;
+$primitive-green-400: #4ade80;
+$primitive-green-500: #22c55e;
+$primitive-green-600: #16a34a;
+$primitive-green-700: #15803d;
+$primitive-green-800: #166534;
+$primitive-green-900: #14532d;
+$primitive-green-950: #052e16;
+
+// Yellow Scale
+$primitive-yellow-50: #fefce8;
+$primitive-yellow-100: #fef9c3;
+$primitive-yellow-200: #fef08a;
+$primitive-yellow-300: #fde047;
+$primitive-yellow-400: #facc15;
+$primitive-yellow-500: #eab308;
+$primitive-yellow-600: #ca8a04;
+$primitive-yellow-700: #a16207;
+$primitive-yellow-800: #854d0e;
+$primitive-yellow-900: #713f12;
+$primitive-yellow-950: #422006;
+
+// Orange Scale
+$primitive-orange-50: #fff7ed;
+$primitive-orange-100: #ffedd5;
+$primitive-orange-200: #fed7aa;
+$primitive-orange-300: #fdba74;
+$primitive-orange-400: #fb923c;
+$primitive-orange-500: #f97316;
+$primitive-orange-600: #ea580c;
+$primitive-orange-700: #c2410c;
+$primitive-orange-800: #9a3412;
+$primitive-orange-900: #7c2d12;
+$primitive-orange-950: #431407;
+
+// Pure Colors
+$primitive-white: #ffffff;
+$primitive-black: #000000;
+
+// ============================================================================
+// SEMANTIC COLOR TOKENS
+// ============================================================================
+
+// Brand Colors
+$color-primary: $primitive-blue-600;
+$color-primary-hover: $primitive-blue-700;
+$color-primary-active: $primitive-blue-800;
+$color-primary-light: $primitive-blue-100;
+$color-primary-dark: $primitive-blue-900;
+
+$color-secondary: $primitive-gray-600;
+$color-secondary-hover: $primitive-gray-700;
+$color-secondary-active: $primitive-gray-800;
+$color-secondary-light: $primitive-gray-100;
+$color-secondary-dark: $primitive-gray-900;
+
+// Feedback Colors
+$color-success: $primitive-green-600;
+$color-success-hover: $primitive-green-700;
+$color-success-light: $primitive-green-100;
+$color-success-dark: $primitive-green-900;
+
+$color-warning: $primitive-yellow-600;
+$color-warning-hover: $primitive-yellow-700;
+$color-warning-light: $primitive-yellow-100;
+$color-warning-dark: $primitive-yellow-900;
+
+$color-danger: $primitive-red-600;
+$color-danger-hover: $primitive-red-700;
+$color-danger-light: $primitive-red-100;
+$color-danger-dark: $primitive-red-900;
+
+$color-info: $primitive-blue-500;
+$color-info-hover: $primitive-blue-600;
+$color-info-light: $primitive-blue-100;
+$color-info-dark: $primitive-blue-900;
+
+// Text Colors
+$color-text-primary: $primitive-gray-900;
+$color-text-secondary: $primitive-gray-600;
+$color-text-tertiary: $primitive-gray-500;
+$color-text-disabled: $primitive-gray-400;
+$color-text-inverse: $primitive-white;
+$color-text-link: $color-primary;
+$color-text-link-hover: $color-primary-hover;
+
+// Background Colors
+$color-background: $primitive-white;
+$color-background-secondary: $primitive-gray-50;
+$color-background-tertiary: $primitive-gray-100;
+$color-background-inverse: $primitive-gray-900;
+$color-background-disabled: $primitive-gray-100;
+$color-background-overlay: rgba(0, 0, 0, 0.5);
+
+// Border Colors
+$color-border: $primitive-gray-300;
+$color-border-hover: $primitive-gray-400;
+$color-border-focus: $color-primary;
+$color-border-error: $color-danger;
+$color-border-disabled: $primitive-gray-200;
+
+// Surface Colors (for cards, panels, etc.)
+$color-surface: $primitive-white;
+$color-surface-elevated: $primitive-white;
+$color-surface-hover: $primitive-gray-50;
+
+// ============================================================================
+// CSS CUSTOM PROPERTIES (for runtime theming)
+// ============================================================================
+
+:root {
+  // Primitive colors
+  --primitive-blue-500: #{$primitive-blue-500};
+  --primitive-blue-600: #{$primitive-blue-600};
+  --primitive-gray-50: #{$primitive-gray-50};
+  --primitive-gray-100: #{$primitive-gray-100};
+  --primitive-gray-300: #{$primitive-gray-300};
+  --primitive-gray-600: #{$primitive-gray-600};
+  --primitive-gray-900: #{$primitive-gray-900};
+
+  // Brand colors
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-primary-active: #{$color-primary-active};
+  --color-primary-light: #{$color-primary-light};
+
+  --color-secondary: #{$color-secondary};
+  --color-secondary-hover: #{$color-secondary-hover};
+
+  // Feedback colors
+  --color-success: #{$color-success};
+  --color-success-hover: #{$color-success-hover};
+  --color-success-light: #{$color-success-light};
+
+  --color-warning: #{$color-warning};
+  --color-warning-hover: #{$color-warning-hover};
+  --color-warning-light: #{$color-warning-light};
+
+  --color-danger: #{$color-danger};
+  --color-danger-hover: #{$color-danger-hover};
+  --color-danger-light: #{$color-danger-light};
+
+  --color-info: #{$color-info};
+  --color-info-hover: #{$color-info-hover};
+  --color-info-light: #{$color-info-light};
+
+  // Text colors
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-tertiary: #{$color-text-tertiary};
+  --color-text-disabled: #{$color-text-disabled};
+  --color-text-inverse: #{$color-text-inverse};
+  --color-text-link: #{$color-text-link};
+  --color-text-link-hover: #{$color-text-link-hover};
+
+  // Background colors
+  --color-background: #{$color-background};
+  --color-background-secondary: #{$color-background-secondary};
+  --color-background-tertiary: #{$color-background-tertiary};
+  --color-background-inverse: #{$color-background-inverse};
+  --color-background-disabled: #{$color-background-disabled};
+  --color-background-overlay: #{$color-background-overlay};
+
+  // Border colors
+  --color-border: #{$color-border};
+  --color-border-hover: #{$color-border-hover};
+  --color-border-focus: #{$color-border-focus};
+  --color-border-error: #{$color-border-error};
+
+  // Surface colors
+  --color-surface: #{$color-surface};
+  --color-surface-elevated: #{$color-surface-elevated};
+  --color-surface-hover: #{$color-surface-hover};
+}

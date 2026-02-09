@@ -1,0 +1,116 @@
+// Design System - Animation Tokens
+
+// ============================================================================
+// DURATIONS
+// ============================================================================
+
+$duration-instant: 0ms;
+$duration-fast: 150ms;
+$duration-normal: 250ms;
+$duration-moderate: 350ms;
+$duration-slow: 500ms;
+$duration-slower: 700ms;
+$duration-slowest: 1000ms;
+
+// ============================================================================
+// EASING FUNCTIONS
+// ============================================================================
+
+// Standard easing
+$ease-linear: linear;
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Custom easing
+$ease-smooth: cubic-bezier(0.4, 0, 0.6, 1);
+$ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+$ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);
+
+// Semantic aliases
+$ease-default: $ease-in-out;
+$ease-enter: $ease-out;
+$ease-exit: $ease-in;
+
+// ============================================================================
+// COMMON TRANSITIONS
+// ============================================================================
+
+// Base transitions
+$transition-base: all $duration-normal $ease-in-out;
+$transition-fast: all $duration-fast $ease-in-out;
+$transition-slow: all $duration-slow $ease-in-out;
+
+// Property-specific transitions
+$transition-color: color $duration-fast $ease-in-out;
+$transition-background: background-color $duration-fast $ease-in-out;
+$transition-border: border-color $duration-fast $ease-in-out;
+$transition-opacity: opacity $duration-normal $ease-in-out;
+$transition-transform: transform $duration-normal $ease-out;
+$transition-shadow: box-shadow $duration-normal $ease-in-out;
+
+// Multiple property transitions
+$transition-colors: color $duration-fast $ease-in-out,
+  background-color $duration-fast $ease-in-out, border-color $duration-fast $ease-in-out;
+
+$transition-all-colors: color $duration-fast $ease-in-out,
+  background-color $duration-fast $ease-in-out, border-color $duration-fast $ease-in-out,
+  fill $duration-fast $ease-in-out, stroke $duration-fast $ease-in-out;
+
+// Component-specific transitions
+$transition-button: background-color $duration-fast $ease-in-out,
+  border-color $duration-fast $ease-in-out, color $duration-fast $ease-in-out,
+  box-shadow $duration-fast $ease-in-out, transform $duration-fast $ease-out;
+
+$transition-input: border-color $duration-fast $ease-in-out,
+  box-shadow $duration-fast $ease-in-out;
+
+$transition-modal: opacity $duration-normal $ease-in-out,
+  transform $duration-normal $ease-out;
+
+$transition-dropdown: opacity $duration-fast $ease-in,
+  transform $duration-fast $ease-in;
+
+// ============================================================================
+// ANIMATION DELAYS
+// ============================================================================
+
+$delay-0: 0ms;
+$delay-75: 75ms;
+$delay-100: 100ms;
+$delay-150: 150ms;
+$delay-200: 200ms;
+$delay-300: 300ms;
+$delay-500: 500ms;
+$delay-700: 700ms;
+$delay-1000: 1000ms;
+
+// ============================================================================
+// CSS CUSTOM PROPERTIES
+// ============================================================================
+
+:root {
+  // Durations
+  --duration-instant: #{$duration-instant};
+  --duration-fast: #{$duration-fast};
+  --duration-normal: #{$duration-normal};
+  --duration-moderate: #{$duration-moderate};
+  --duration-slow: #{$duration-slow};
+  --duration-slower: #{$duration-slower};
+
+  // Easing
+  --ease-linear: #{$ease-linear};
+  --ease-in: #{$ease-in};
+  --ease-out: #{$ease-out};
+  --ease-in-out: #{$ease-in-out};
+  --ease-default: #{$ease-default};
+
+  // Common transitions
+  --transition-base: #{$transition-base};
+  --transition-fast: #{$transition-fast};
+  --transition-color: #{$transition-color};
+  --transition-background: #{$transition-background};
+  --transition-transform: #{$transition-transform};
+  --transition-shadow: #{$transition-shadow};
+}

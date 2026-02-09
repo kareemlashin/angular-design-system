@@ -1,0 +1,51 @@
+// Design System - Z-Index Tokens
+// Stacking context scale
+
+// ============================================================================
+// Z-INDEX SCALE
+// ============================================================================
+
+$z-index-base: 0;
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+$z-index-notification: 1080;
+$z-index-toast: 1090;
+
+// ============================================================================
+// SEMANTIC Z-INDEX MAP
+// ============================================================================
+
+$z-indices: (
+  base: $z-index-base,
+  dropdown: $z-index-dropdown,
+  sticky: $z-index-sticky,
+  fixed: $z-index-fixed,
+  modal-backdrop: $z-index-modal-backdrop,
+  modal: $z-index-modal,
+  popover: $z-index-popover,
+  tooltip: $z-index-tooltip,
+  notification: $z-index-notification,
+  toast: $z-index-toast,
+);
+
+// ============================================================================
+// CSS CUSTOM PROPERTIES
+// ============================================================================
+
+:root {
+  --z-index-base: #{$z-index-base};
+  --z-index-dropdown: #{$z-index-dropdown};
+  --z-index-sticky: #{$z-index-sticky};
+  --z-index-fixed: #{$z-index-fixed};
+  --z-index-modal-backdrop: #{$z-index-modal-backdrop};
+  --z-index-modal: #{$z-index-modal};
+  --z-index-popover: #{$z-index-popover};
+  --z-index-tooltip: #{$z-index-tooltip};
+  --z-index-notification: #{$z-index-notification};
+  --z-index-toast: #{$z-index-toast};
+}

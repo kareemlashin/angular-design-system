@@ -1,0 +1,97 @@
+// Design System - Dark Theme
+// Override semantic color tokens for dark mode
+
+// Apply dark theme when data-theme="dark" or prefers-color-scheme: dark
+:root[data-theme='dark'],
+:root.dark-theme {
+  // Brand Colors (adjusted for dark background)
+  --color-primary: #60a5fa; // Lighter blue for better contrast
+  --color-primary-hover: #93c5fd;
+  --color-primary-active: #bfdbfe;
+  --color-primary-light: #1e3a8a;
+  --color-primary-dark: #dbeafe;
+
+  --color-secondary: #9ca3af;
+  --color-secondary-hover: #d1d5db;
+  --color-secondary-active: #e5e7eb;
+  --color-secondary-light: #374151;
+  --color-secondary-dark: #f3f4f6;
+
+  // Feedback Colors
+  --color-success: #4ade80;
+  --color-success-hover: #86efac;
+  --color-success-light: #14532d;
+  --color-success-dark: #dcfce7;
+
+  --color-warning: #fde047;
+  --color-warning-hover: #fef08a;
+  --color-warning-light: #713f12;
+  --color-warning-dark: #fef9c3;
+
+  --color-danger: #f87171;
+  --color-danger-hover: #fca5a5;
+  --color-danger-light: #7f1d1d;
+  --color-danger-dark: #fee2e2;
+
+  --color-info: #60a5fa;
+  --color-info-hover: #93c5fd;
+  --color-info-light: #1e3a8a;
+  --color-info-dark: #dbeafe;
+
+  // Text Colors
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #d1d5db;
+  --color-text-tertiary: #9ca3af;
+  --color-text-disabled: #6b7280;
+  --color-text-inverse: #111827;
+  --color-text-link: #60a5fa;
+  --color-text-link-hover: #93c5fd;
+
+  // Background Colors
+  --color-background: #111827;
+  --color-background-secondary: #1f2937;
+  --color-background-tertiary: #374151;
+  --color-background-inverse: #f9fafb;
+  --color-background-disabled: #1f2937;
+  --color-background-overlay: rgba(0, 0, 0, 0.75);
+
+  // Border Colors
+  --color-border: #4b5563;
+  --color-border-hover: #6b7280;
+  --color-border-focus: #60a5fa;
+  --color-border-error: #f87171;
+  --color-border-disabled: #374151;
+
+  // Surface Colors
+  --color-surface: #1f2937;
+  --color-surface-elevated: #374151;
+  --color-surface-hover: #4b5563;
+
+  // Shadows (adjusted for dark mode)
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+
+  // Focus shadows (adjusted for dark mode)
+  --shadow-focus: 0 0 0 3px rgba(96, 165, 250, 0.5);
+  --shadow-focus-primary: 0 0 0 3px rgba(96, 165, 250, 0.5);
+  --shadow-focus-success: 0 0 0 3px rgba(74, 222, 128, 0.5);
+  --shadow-focus-danger: 0 0 0 3px rgba(248, 113, 113, 0.5);
+}
+
+// Auto dark theme based on system preference
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    // Brand Colors
+    --color-primary: #60a5fa;
+    --color-primary-hover: #93c5fd;
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #d1d5db;
+    --color-background: #111827;
+    --color-background-secondary: #1f2937;
+    --color-surface: #1f2937;
+    --color-border: #4b5563;
+  }
+}

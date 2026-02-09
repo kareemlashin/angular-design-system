@@ -1,0 +1,162 @@
+// Design System - Typography Tokens
+
+// ============================================================================
+// FONT FAMILIES
+// ============================================================================
+
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+$font-family-heading: $font-family-base;
+
+$font-family-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono',
+  'Roboto Mono', 'Cascadia Code', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New',
+  monospace;
+
+// ============================================================================
+// FONT SIZES (Modular Scale: 1.250 - Major Third)
+// ============================================================================
+
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-md: 1rem; // 16px (alias)
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
+$font-size-5xl: 3rem; // 48px
+$font-size-6xl: 3.75rem; // 60px
+$font-size-7xl: 4.5rem; // 72px
+
+// ============================================================================
+// FONT WEIGHTS
+// ============================================================================
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-normal: 400; // alias
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// ============================================================================
+// LINE HEIGHTS
+// ============================================================================
+
+$line-height-none: 1;
+$line-height-tight: 1.25;
+$line-height-snug: 1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 1.75;
+
+// ============================================================================
+// LETTER SPACING
+// ============================================================================
+
+$letter-spacing-tighter: -0.05em;
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.025em;
+$letter-spacing-wider: 0.05em;
+$letter-spacing-widest: 0.1em;
+
+// ============================================================================
+// HEADING STYLES
+// ============================================================================
+
+$heading-h1-size: $font-size-5xl;
+$heading-h1-weight: $font-weight-bold;
+$heading-h1-line-height: $line-height-tight;
+$heading-h1-letter-spacing: $letter-spacing-tight;
+
+$heading-h2-size: $font-size-4xl;
+$heading-h2-weight: $font-weight-bold;
+$heading-h2-line-height: $line-height-tight;
+$heading-h2-letter-spacing: $letter-spacing-tight;
+
+$heading-h3-size: $font-size-3xl;
+$heading-h3-weight: $font-weight-semibold;
+$heading-h3-line-height: $line-height-snug;
+$heading-h3-letter-spacing: $letter-spacing-normal;
+
+$heading-h4-size: $font-size-2xl;
+$heading-h4-weight: $font-weight-semibold;
+$heading-h4-line-height: $line-height-snug;
+$heading-h4-letter-spacing: $letter-spacing-normal;
+
+$heading-h5-size: $font-size-xl;
+$heading-h5-weight: $font-weight-semibold;
+$heading-h5-line-height: $line-height-normal;
+$heading-h5-letter-spacing: $letter-spacing-normal;
+
+$heading-h6-size: $font-size-lg;
+$heading-h6-weight: $font-weight-semibold;
+$heading-h6-line-height: $line-height-normal;
+$heading-h6-letter-spacing: $letter-spacing-normal;
+
+// ============================================================================
+// PARAGRAPH STYLES
+// ============================================================================
+
+$paragraph-base-size: $font-size-base;
+$paragraph-base-line-height: $line-height-relaxed;
+$paragraph-base-letter-spacing: $letter-spacing-normal;
+
+$paragraph-small-size: $font-size-sm;
+$paragraph-small-line-height: $line-height-normal;
+
+$paragraph-large-size: $font-size-lg;
+$paragraph-large-line-height: $line-height-relaxed;
+
+// ============================================================================
+// CSS CUSTOM PROPERTIES
+// ============================================================================
+
+:root {
+  // Font families
+  --font-family-base: #{$font-family-base};
+  --font-family-heading: #{$font-family-heading};
+  --font-family-mono: #{$font-family-mono};
+
+  // Font sizes
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-md: #{$font-size-md};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+  --font-size-5xl: #{$font-size-5xl};
+  --font-size-6xl: #{$font-size-6xl};
+  --font-size-7xl: #{$font-size-7xl};
+
+  // Font weights
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+  --font-weight-extrabold: #{$font-weight-extrabold};
+
+  // Line heights
+  --line-height-none: #{$line-height-none};
+  --line-height-tight: #{$line-height-tight};
+  --line-height-snug: #{$line-height-snug};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+  --line-height-loose: #{$line-height-loose};
+
+  // Letter spacing
+  --letter-spacing-tighter: #{$letter-spacing-tighter};
+  --letter-spacing-tight: #{$letter-spacing-tight};
+  --letter-spacing-normal: #{$letter-spacing-normal};
+  --letter-spacing-wide: #{$letter-spacing-wide};
+  --letter-spacing-wider: #{$letter-spacing-wider};
+  --letter-spacing-widest: #{$letter-spacing-widest};
+}
