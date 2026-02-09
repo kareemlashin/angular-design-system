@@ -36,6 +36,9 @@
       ],
       "@design-system/components/radio": ["libs/design-system/components/radio/src/index.ts"],
       "@design-system/components/select": ["libs/design-system/components/select/src/index.ts"],
+      "@design-system/components/table": ["libs/design-system/components/table/src/index.ts"],
+      "@design-system/components/toast": ["libs/design-system/components/toast/src/index.ts"],
+      "@design-system/components/sidenav": ["libs/design-system/components/sidenav/src/index.ts"],
       "@design-system/components/typography": [
         "libs/design-system/components/typography/src/index.ts"
       ],
