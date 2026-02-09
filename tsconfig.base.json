@@ -42,7 +42,9 @@
       "@design-system/core": ["libs/design-system/core/src/index.ts"],
       "@design-system/testing": ["libs/design-system/testing/src/index.ts"],
       "@design-system/tokens": ["libs/design-system/tokens/src/index.ts"],
+      "button": ["libs/design-system/components/button/src/index.ts"],
       "core": ["libs/design-system/core/src/index.ts"],
+      "table": ["libs/design-system/components/table/src/index.ts"],
       "tokens": ["libs/design-system/tokens/src/index.ts"]
     }
   },

@@ -1,0 +1,201 @@
+@import '@design-system/tokens';
+
+.ds-button {
+  display: inline-block;
+  position: relative;
+
+  &--full-width {
+    display: block;
+    width: 100%;
+  }
+}
+
+.ds-button__element {
+  @include reset-button;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2;
+
+  font-family: $font-family-base;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  border: $border-width-thin solid transparent;
+  border-radius: $border-radius-button;
+  cursor: pointer;
+  user-select: none;
+
+  transition: $transition-button;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: $shadow-focus;
+  }
+
+  @include reduced-motion;
+}
+
+// Sizes
+.ds-button--sm .ds-button__element {
+  padding: $spacing-2 $spacing-3;
+  font-size: $font-size-sm;
+}
+
+.ds-button--md .ds-button__element {
+  padding: $spacing-3 $spacing-4;
+  font-size: $font-size-base;
+}
+
+.ds-button--lg .ds-button__element {
+  padding: $spacing-4 $spacing-6;
+  font-size: $font-size-lg;
+}
+
+// Primary Variant
+.ds-button--primary .ds-button__element {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: $primitive-white;
+
+  @include hover {
+    background-color: $color-primary-hover;
+    border-color: $color-primary-hover;
+  }
+
+  @include active {
+    background-color: $color-primary-active;
+    border-color: $color-primary-active;
+  }
+}
+
+// Secondary Variant
+.ds-button--secondary .ds-button__element {
+  background-color: $color-secondary;
+  border-color: $color-secondary;
+  color: $primitive-white;
+
+  @include hover {
+    background-color: $color-secondary-hover;
+    border-color: $color-secondary-hover;
+  }
+
+  @include active {
+    background-color: $color-secondary-active;
+    border-color: $color-secondary-active;
+  }
+}
+
+// Outline Variant
+.ds-button--outline .ds-button__element {
+  background-color: transparent;
+  border-color: $color-border;
+  color: $color-text-primary;
+
+  @include hover {
+    background-color: $color-background-secondary;
+    border-color: $color-border-hover;
+  }
+
+  @include active {
+    background-color: $color-background-tertiary;
+  }
+}
+
+// Ghost Variant
+.ds-button--ghost .ds-button__element {
+  background-color: transparent;
+  border-color: transparent;
+  color: $color-text-primary;
+
+  @include hover {
+    background-color: $color-background-secondary;
+  }
+
+  @include active {
+    background-color: $color-background-tertiary;
+  }
+}
+
+// Danger Variant
+.ds-button--danger .ds-button__element {
+  background-color: $color-danger;
+  border-color: $color-danger;
+  color: $primitive-white;
+
+  @include hover {
+    background-color: $color-danger-hover;
+    border-color: $color-danger-hover;
+  }
+
+  @include active {
+    background-color: $color-danger-dark;
+    border-color: $color-danger-dark;
+  }
+
+  &:focus-visible {
+    box-shadow: $shadow-focus-danger;
+  }
+}
+
+// Disabled State
+.ds-button--disabled .ds-button__element {
+  background-color: $color-background-disabled;
+  border-color: $color-border-disabled;
+  color: $color-text-disabled;
+  cursor: not-allowed;
+  opacity: 0.6;
+
+  @include hover {
+    background-color: $color-background-disabled;
+    border-color: $color-border-disabled;
+  }
+}
+
+// Loading State
+.ds-button--loading .ds-button__element {
+  cursor: not-allowed;
+  position: relative;
+}
+
+.ds-button__content {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+
+  &--hidden {
+    visibility: hidden;
+  }
+}
+
+.ds-button__loader {
+  @include absolute-cover;
+  @include flex-center;
+}
+
+.ds-button__spinner {
+  @include square(1.25em);
+  animation: spin $duration-slowest $ease-linear infinite;
+}
+
+.ds-button__spinner-circle {
+  stroke: currentColor;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 15;
+  stroke-linecap: round;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Full width
+.ds-button--full-width .ds-button__element {
+  width: 100%;
+}

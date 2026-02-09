@@ -1,0 +1,27 @@
+<button
+  [type]="type()"
+  [disabled]="disabled() || loading()"
+  [attr.aria-label]="ariaLabel()"
+  (click)="handleClick($event)"
+  (keydown)="handleKeydown($event)"
+  class="ds-button__element"
+>
+  <span class="ds-button__content" [class.ds-button__content--hidden]="loading()">
+    <ng-content></ng-content>
+  </span>
+
+  @if (loading()) {
+    <span class="ds-button__loader" aria-hidden="true">
+      <svg class="ds-button__spinner" viewBox="0 0 24 24">
+        <circle
+          class="ds-button__spinner-circle"
+          cx="12"
+          cy="12"
+          r="10"
+          fill="none"
+          stroke-width="3"
+        ></circle>
+      </svg>
+    </span>
+  }
+</button>
