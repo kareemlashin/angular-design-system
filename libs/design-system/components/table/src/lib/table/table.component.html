@@ -1,1 +1,77 @@
-<p>Table works!</p>
+<div class="ds-table-scroll">
+  <table class="ds-table" role="grid">
+    <thead class="ds-table__head">
+      <tr>
+        @for (column of columns(); track column.key) {
+          <th
+            class="ds-table__header"
+            [class.ds-table__header--sortable]="column.sortable"
+            [class.ds-table__header--sorted]="sortColumn() === column.key"
+            [style.width]="column.width || 'auto'"
+            [style.text-align]="column.align || 'left'"
+            [attr.aria-sort]="sortColumn() === column.key ? (sortDirection() === 'asc' ? 'ascending' : 'descending') : null"
+            (click)="handleSort(column.key)"
+          >
+            <span class="ds-table__header-content">
+              {{ column.label }}
+              @if (column.sortable) {
+                <span class="ds-table__sort-indicator">
+                  @if (sortColumn() === column.key) {
+                    <span class="ds-table__sort-arrow">
+                      {{ sortDirection() === 'asc' ? '↑' : '↓' }}
+                    </span>
+                  } @else {
+                    <span class="ds-table__sort-arrow ds-table__sort-arrow--inactive">↕</span>
+                  }
+                </span>
+              }
+            </span>
+          </th>
+        }
+      </tr>
+    </thead>
+
+    <tbody class="ds-table__body">
+      @if (loading()) {
+        <tr>
+          <td [attr.colspan]="columns().length" class="ds-table__loading">
+            <div class="ds-table__spinner"></div>
+            <span>Loading...</span>
+          </td>
+        </tr>
+      } @else if (data().length === 0) {
+        <tr>
+          <td [attr.colspan]="columns().length" class="ds-table__empty">
+            <span>{{ emptyMessage() }}</span>
+          </td>
+        </tr>
+      } @else {
+        @for (row of data(); track trackByFn()($index, row); let i = $index; let odd = $odd) {
+          <tr
+            class="ds-table__row"
+            [class.ds-table__row--odd]="odd"
+            (click)="handleRowClick(row)"
+            [attr.tabindex]="0"
+            (keydown.enter)="handleRowClick(row)"
+          >
+            @for (column of columns(); track column.key) {
+              <td
+                class="ds-table__cell"
+                [style.text-align]="column.align || 'left'"
+              >
+                @if (column.template) {
+                  <ng-container
+                    [ngTemplateOutlet]="column.template"
+                    [ngTemplateOutletContext]="{ row: row, value: getCellValue(row, column.key) }"
+                  />
+                } @else {
+                  {{ getCellValue(row, column.key) }}
+                }
+              </td>
+            }
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>

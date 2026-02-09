@@ -1,0 +1,165 @@
+@import '../../../../../tokens/src/lib/scss/_tokens.scss';
+
+.ds-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+}
+
+// Header
+.ds-table__head {
+  background-color: $color-background-secondary;
+  border-bottom: 2px solid $color-border;
+}
+
+.ds-table__header {
+  padding: $spacing-4 $spacing-6;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  color: $color-text-secondary;
+  white-space: nowrap;
+  text-align: left;
+  user-select: none;
+
+  &.ds-table__header--sortable {
+    cursor: pointer;
+    transition: color $duration-fast $ease-out;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+  }
+
+  &.ds-table__header--sorted {
+    color: $color-primary;
+  }
+}
+
+.ds-table__header-content {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+}
+
+.ds-table__sort-indicator {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ds-table__sort-arrow {
+  font-size: $font-size-sm;
+  line-height: 1;
+
+  &.ds-table__sort-arrow--inactive {
+    opacity: 0.3;
+  }
+}
+
+// Body
+.ds-table__body {
+  .ds-table__row {
+    border-bottom: 1px solid $color-border;
+    transition: background-color $duration-fast $ease-out;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: -2px;
+    }
+  }
+}
+
+.ds-table__cell {
+  padding: $spacing-4 $spacing-6;
+  vertical-align: middle;
+  line-height: $line-height-normal;
+}
+
+// Loading state
+.ds-table__loading {
+  padding: $spacing-10;
+  text-align: center;
+  color: $color-text-secondary;
+
+  .ds-table__spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid $color-border;
+    border-top-color: $color-primary;
+    border-radius: 50%;
+    animation: tableSpinner 0.8s linear infinite;
+    margin-bottom: $spacing-3;
+  }
+}
+
+@keyframes tableSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Empty state
+.ds-table__empty {
+  padding: $spacing-10;
+  text-align: center;
+  color: $color-text-tertiary;
+  font-size: $font-size-base;
+}
+
+// Variants
+:host(.ds-table-wrapper--striped) {
+  .ds-table__row--odd {
+    background-color: $color-background-secondary;
+  }
+}
+
+:host(.ds-table-wrapper--bordered) {
+  .ds-table {
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+  }
+
+  .ds-table__cell,
+  .ds-table__header {
+    border-right: 1px solid $color-border;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+:host(.ds-table-wrapper--compact) {
+  .ds-table__header {
+    padding: $spacing-2 $spacing-4;
+  }
+
+  .ds-table__cell {
+    padding: $spacing-2 $spacing-4;
+  }
+}
+
+:host(.ds-table-wrapper--hoverable) {
+  .ds-table__row {
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($primitive-blue-500, 0.04);
+    }
+  }
+}
