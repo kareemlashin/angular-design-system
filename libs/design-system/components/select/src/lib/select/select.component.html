@@ -1,0 +1,109 @@
+<div class="ds-select__wrapper" #selectElement>
+  @if (label()) {
+    <label [for]="id()" class="ds-select__label">
+      {{ label() }}
+      @if (required()) {
+        <span class="ds-select__required" aria-label="required">*</span>
+      }
+    </label>
+  }
+
+  <div
+    [id]="id()"
+    class="ds-select__trigger"
+    [attr.role]="'combobox'"
+    [attr.aria-expanded]="isOpen()"
+    [attr.aria-haspopup]="'listbox'"
+    [attr.aria-label]="ariaLabel() || label()"
+    [attr.aria-describedby]="error() ? errorId() : (hint() ? hintId() : null)"
+    [attr.aria-invalid]="!!error()"
+    [attr.aria-disabled]="disabled()"
+    [tabindex]="disabled() ? -1 : 0"
+    (click)="toggleDropdown()"
+    (keydown)="handleKeydown($event)"
+    (blur)="handleBlur($event)"
+    (focus)="handleFocus($event)"
+  >
+    <span class="ds-select__value">
+      {{ selectedOption()?.label || placeholder() }}
+    </span>
+    <span class="ds-select__arrow" [class.ds-select__arrow--open]="isOpen()">
+      ▼
+    </span>
+  </div>
+
+  @if (isOpen()) {
+    <div class="ds-select__dropdown" role="listbox" [attr.aria-labelledby]="id()">
+      @if (searchable()) {
+        <div class="ds-select__search">
+          <input
+            type="text"
+            [id]="id() + '-search'"
+            class="ds-select__search-input"
+            placeholder="Search..."
+            [value]="searchTerm()"
+            (input)="handleSearchInput($event)"
+            (keydown)="handleKeydown($event)"
+          />
+        </div>
+      }
+
+      <div class="ds-select__options">
+        @if (filteredOptions().length === 0) {
+          <div class="ds-select__empty">No options found</div>
+        } @else {
+          @if (hasGroups()) {
+            <!-- Grouped options -->
+            @for (group of groupedOptions() | keyvalue; track group.key) {
+              @if (group.key) {
+                <div class="ds-select__group-label">{{ group.key }}</div>
+              }
+              @for (option of group.value; track $index; let i = $index) {
+                <div
+                  class="ds-select__option"
+                  [class.ds-select__option--selected]="option.value === value()"
+                  [class.ds-select__option--disabled]="option.disabled"
+                  [class.ds-select__option--highlighted]="highlightedIndex() === filteredOptions().indexOf(option)"
+                  [attr.role]="'option'"
+                  [attr.aria-selected]="option.value === value()"
+                  [attr.aria-disabled]="option.disabled"
+                  (click)="selectOption(option, $event)"
+                >
+                  {{ option.label }}
+                </div>
+              }
+            }
+          } @else {
+            <!-- Flat options -->
+            @for (option of filteredOptions(); track $index; let i = $index) {
+              <div
+                class="ds-select__option"
+                [class.ds-select__option--selected]="option.value === value()"
+                [class.ds-select__option--disabled]="option.disabled"
+                [class.ds-select__option--highlighted]="i === highlightedIndex()"
+                [attr.role]="'option'"
+                [attr.aria-selected]="option.value === value()"
+                [attr.aria-disabled]="option.disabled"
+                (click)="selectOption(option, $event)"
+              >
+                {{ option.label }}
+              </div>
+            }
+          }
+        }
+      </div>
+    </div>
+  }
+
+  @if (error()) {
+    <span [id]="errorId()" class="ds-select__error" role="alert">
+      {{ error() }}
+    </span>
+  }
+
+  @if (hint() && !error()) {
+    <span [id]="hintId()" class="ds-select__hint">
+      {{ hint() }}
+    </span>
+  }
+</div>

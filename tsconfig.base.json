@@ -43,9 +43,12 @@
       "@design-system/testing": ["libs/design-system/testing/src/index.ts"],
       "@design-system/tokens": ["libs/design-system/tokens/src/index.ts"],
       "button": ["libs/design-system/components/button/src/index.ts"],
+      "checkbox": ["libs/design-system/components/checkbox/src/index.ts"],
       "core": ["libs/design-system/core/src/index.ts"],
+      "select": ["libs/design-system/components/select/src/index.ts"],
       "table": ["libs/design-system/components/table/src/index.ts"],
-      "tokens": ["libs/design-system/tokens/src/index.ts"]
+      "tokens": ["libs/design-system/tokens/src/index.ts"],
+      "typography": ["libs/design-system/components/typography/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

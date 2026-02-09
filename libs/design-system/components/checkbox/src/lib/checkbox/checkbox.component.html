@@ -1,0 +1,54 @@
+<div class="ds-checkbox__wrapper">
+  <label class="ds-checkbox__container" [for]="id()">
+    <input
+      type="checkbox"
+      [id]="id()"
+      [checked]="checked()"
+      [indeterminate]="indeterminate()"
+      [disabled]="disabled()"
+      [required]="required()"
+      [attr.aria-label]="ariaLabel() || label()"
+      [attr.aria-describedby]="error() ? errorId() : (hint() ? hintId() : null)"
+      [attr.aria-invalid]="!!error()"
+      class="ds-checkbox__input"
+      (change)="handleChange($event)"
+      (blur)="handleBlur($event)"
+      (focus)="handleFocus($event)"
+      (keydown)="handleKeydown($event)"
+    />
+
+    <span class="ds-checkbox__box">
+      @if (checked() && !indeterminate()) {
+        <svg class="ds-checkbox__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      }
+      @if (indeterminate()) {
+        <svg class="ds-checkbox__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      }
+    </span>
+
+    @if (label()) {
+      <span class="ds-checkbox__label">
+        {{ label() }}
+        @if (required()) {
+          <span class="ds-checkbox__required" aria-label="required">*</span>
+        }
+      </span>
+    }
+  </label>
+
+  @if (error()) {
+    <span [id]="errorId()" class="ds-checkbox__error" role="alert">
+      {{ error() }}
+    </span>
+  }
+
+  @if (hint() && !error()) {
+    <span [id]="hintId()" class="ds-checkbox__hint">
+      {{ hint() }}
+    </span>
+  }
+</div>

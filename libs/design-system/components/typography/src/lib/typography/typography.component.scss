@@ -1,0 +1,196 @@
+@import '../../../../../tokens/src/lib/scss/_tokens.scss';
+
+// ============================================================================
+// HEADING COMPONENT
+// ============================================================================
+
+.ds-heading {
+  font-family: $font-family-base;
+  line-height: $line-height-tight;
+  margin-top: 0;
+  margin-bottom: $spacing-4;
+
+  &.ds-heading--no-margin {
+    margin: 0;
+  }
+}
+
+// Heading Levels
+.ds-heading--1 {
+  font-size: $font-size-4xl;
+  line-height: $line-height-tight;
+
+  @include respond-to('md') {
+    font-size: $font-size-5xl;
+  }
+}
+
+.ds-heading--2 {
+  font-size: $font-size-3xl;
+  line-height: $line-height-tight;
+
+  @include respond-to('md') {
+    font-size: $font-size-4xl;
+  }
+}
+
+.ds-heading--3 {
+  font-size: $font-size-2xl;
+  line-height: $line-height-snug;
+
+  @include respond-to('md') {
+    font-size: $font-size-3xl;
+  }
+}
+
+.ds-heading--4 {
+  font-size: $font-size-xl;
+  line-height: $line-height-snug;
+
+  @include respond-to('md') {
+    font-size: $font-size-2xl;
+  }
+}
+
+.ds-heading--5 {
+  font-size: $font-size-lg;
+  line-height: $line-height-normal;
+
+  @include respond-to('md') {
+    font-size: $font-size-xl;
+  }
+}
+
+.ds-heading--6 {
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+
+  @include respond-to('md') {
+    font-size: $font-size-lg;
+  }
+}
+
+// Heading Weights
+.ds-heading--normal {
+  font-weight: $font-weight-normal;
+}
+
+.ds-heading--medium {
+  font-weight: $font-weight-medium;
+}
+
+.ds-heading--semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.ds-heading--bold {
+  font-weight: $font-weight-bold;
+}
+
+// Heading Colors
+.ds-heading--primary {
+  color: $color-text-primary;
+}
+
+.ds-heading--secondary {
+  color: $color-text-secondary;
+}
+
+.ds-heading--tertiary {
+  color: $color-text-tertiary;
+}
+
+.ds-heading--danger {
+  color: $color-danger;
+}
+
+.ds-heading--success {
+  color: $color-success;
+}
+
+.ds-heading--warning {
+  color: $color-warning;
+}
+
+// ============================================================================
+// TEXT COMPONENT
+// ============================================================================
+
+.ds-text {
+  font-family: $font-family-base;
+  line-height: $line-height-relaxed;
+  margin-top: 0;
+  margin-bottom: $spacing-3;
+
+  &.ds-text--no-margin {
+    margin: 0;
+  }
+}
+
+// Text Sizes
+.ds-text--xs {
+  font-size: $font-size-xs;
+  line-height: $line-height-normal;
+}
+
+.ds-text--sm {
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+}
+
+.ds-text--base {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+}
+
+.ds-text--lg {
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+}
+
+.ds-text--xl {
+  font-size: $font-size-xl;
+  line-height: $line-height-relaxed;
+}
+
+// Text Weights
+.ds-text--normal {
+  font-weight: $font-weight-normal;
+}
+
+.ds-text--medium {
+  font-weight: $font-weight-medium;
+}
+
+.ds-text--semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.ds-text--bold {
+  font-weight: $font-weight-bold;
+}
+
+// Text Colors
+.ds-text--primary {
+  color: $color-text-primary;
+}
+
+.ds-text--secondary {
+  color: $color-text-secondary;
+}
+
+.ds-text--tertiary {
+  color: $color-text-tertiary;
+}
+
+.ds-text--danger {
+  color: $color-danger;
+}
+
+.ds-text--success {
+  color: $color-success;
+}
+
+.ds-text--warning {
+  color: $color-warning;
+}

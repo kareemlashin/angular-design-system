@@ -12,12 +12,7 @@
     },
     "lint": {
       "cache": true,
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore",
-        "{workspaceRoot}/eslint.config.js"
-      ]
+      "inputs": ["default", "{workspaceRoot}/eslint.config.cjs", "{workspaceRoot}/.eslintignore"]
     },
     "storybook": {
       "cache": true
@@ -75,8 +70,7 @@
     "@nx/angular:component": {
       "style": "scss",
       "standalone": true,
-      "changeDetection": "OnPush",
-      "flat": true
+      "changeDetection": "OnPush"
     }
   },
   "defaultProject": "design-system-showcase",

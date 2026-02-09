@@ -1,0 +1,133 @@
+@import '../../../../../tokens/src/lib/scss/_tokens.scss';
+
+.ds-checkbox {
+  display: inline-block;
+}
+
+.ds-checkbox__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+}
+
+.ds-checkbox__container {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: $spacing-3;
+  cursor: pointer;
+  user-select: none;
+
+  .ds-checkbox--disabled & {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.ds-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:focus + .ds-checkbox__box {
+    box-shadow: $shadow-focus;
+    border-color: $color-border-focus;
+  }
+
+  &:checked + .ds-checkbox__box {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  &:indeterminate + .ds-checkbox__box {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  &:disabled + .ds-checkbox__box {
+    background-color: $color-background-disabled;
+    border-color: $color-border;
+    cursor: not-allowed;
+  }
+
+  &:disabled:checked + .ds-checkbox__box,
+  &:disabled:indeterminate + .ds-checkbox__box {
+    background-color: $color-text-disabled;
+    border-color: $color-text-disabled;
+  }
+}
+
+.ds-checkbox__box {
+  position: relative;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: $border-width-medium solid $color-border;
+  border-radius: $border-radius-sm;
+  background-color: $color-background;
+  transition: $transition-input;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include hover {
+    .ds-checkbox__input:not(:disabled) ~ & {
+      border-color: $color-border-hover;
+    }
+  }
+}
+
+.ds-checkbox--error .ds-checkbox__box {
+  border-color: $color-border-error;
+
+  &:focus {
+    box-shadow: $shadow-focus-danger;
+  }
+}
+
+.ds-checkbox__icon {
+  width: 16px;
+  height: 16px;
+  color: $color-background;
+  animation: checkboxCheck $duration-fast $ease-out;
+}
+
+@keyframes checkboxCheck {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ds-checkbox__label {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+  padding-top: 1px; // Align with checkbox center
+
+  .ds-checkbox--disabled & {
+    color: $color-text-disabled;
+  }
+}
+
+.ds-checkbox__required {
+  color: $color-danger;
+  margin-left: $spacing-1;
+}
+
+.ds-checkbox__error {
+  font-size: $font-size-sm;
+  color: $color-danger;
+  margin-left: 23px; // Align with label (20px checkbox + 3px gap)
+}
+
+.ds-checkbox__hint {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-left: 23px; // Align with label
+}
