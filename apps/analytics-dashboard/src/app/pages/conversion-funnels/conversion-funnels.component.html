@@ -1,1 +1,18 @@
-<p>conversion-funnels works!</p>
+<ds-container>
+  <ds-stack [gap]="6">
+    <ds-heading [level]="1">Conversion Funnels</ds-heading>
+    <ds-text>Track user conversion through key funnels</ds-text>
+
+    <ds-card>
+      <ds-card-header>
+        <ds-heading [level]="3">Active Funnels</ds-heading>
+      </ds-card-header>
+      <ds-card-content>
+        <ds-table-container
+          [data]="funnelData"
+          [columns]="columns"
+        />
+      </ds-card-content>
+    </ds-card>
+  </ds-stack>
+</ds-container>

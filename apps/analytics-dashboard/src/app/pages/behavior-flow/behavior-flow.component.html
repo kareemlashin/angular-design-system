@@ -1,1 +1,44 @@
-<p>behavior-flow works!</p>
+<ds-container>
+  <ds-stack [gap]="6">
+    <ds-heading [level]="1">Behavior Flow</ds-heading>
+    <ds-text>Understand how users navigate through your site</ds-text>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
+      <ds-card>
+        <ds-card-header>
+          <ds-heading [level]="3">Top Entry Pages</ds-heading>
+        </ds-card-header>
+        <ds-card-content>
+          <ds-table-container
+            [data]="entryPages"
+            [columns]="entryColumns"
+          />
+        </ds-card-content>
+      </ds-card>
+
+      <ds-card>
+        <ds-card-header>
+          <ds-heading [level]="3">Top Exit Pages</ds-heading>
+        </ds-card-header>
+        <ds-card-content>
+          <ds-table-container
+            [data]="exitPages"
+            [columns]="exitColumns"
+          />
+        </ds-card-content>
+      </ds-card>
+    </div>
+
+    <ds-card>
+      <ds-card-header>
+        <ds-heading [level]="3">Common User Paths</ds-heading>
+      </ds-card-header>
+      <ds-card-content>
+        <ds-table-container
+          [data]="userPaths"
+          [columns]="pathColumns"
+        />
+      </ds-card-content>
+    </ds-card>
+  </ds-stack>
+</ds-container>

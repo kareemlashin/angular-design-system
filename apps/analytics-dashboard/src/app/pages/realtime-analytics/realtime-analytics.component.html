@@ -1,1 +1,31 @@
-<p>realtime-analytics works!</p>
+<ds-container>
+  <ds-stack [gap]="6">
+    <ds-heading [level]="1">Realtime Analytics</ds-heading>
+    <ds-text>Live data view of current user activity</ds-text>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+      @for (stat of stats; track stat.label) {
+        <ds-card>
+          <ds-card-header>
+            <ds-text>{{ stat.label }}</ds-text>
+          </ds-card-header>
+          <ds-card-content>
+            <ds-heading [level]="2">{{ stat.value }}</ds-heading>
+          </ds-card-content>
+        </ds-card>
+      }
+    </div>
+
+    <ds-card>
+      <ds-card-header>
+        <ds-heading [level]="3">Active Pages</ds-heading>
+      </ds-card-header>
+      <ds-card-content>
+        <ds-table-container
+          [data]="activePages"
+          [columns]="columns"
+        />
+      </ds-card-content>
+    </ds-card>
+  </ds-stack>
+</ds-container>

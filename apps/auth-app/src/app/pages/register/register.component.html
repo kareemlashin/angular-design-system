@@ -1,1 +1,65 @@
-<p>register works!</p>
+<ds-container>
+  <div class="register-page">
+    <ds-card>
+      <ds-card-header>
+        <ds-heading [level]="2">Create Account</ds-heading>
+      </ds-card-header>
+      <ds-card-content>
+        <ds-stack [gap]="4">
+          <ds-input
+            label="First Name"
+            placeholder="Enter your first name"
+            [value]="firstName()"
+            (valueChange)="firstName.set($event)"
+          />
+          <ds-input
+            label="Last Name"
+            placeholder="Enter your last name"
+            [value]="lastName()"
+            (valueChange)="lastName.set($event)"
+          />
+          <ds-input
+            label="Email"
+            type="email"
+            placeholder="Enter your email"
+            [value]="email()"
+            (valueChange)="email.set($event)"
+          />
+          <ds-input
+            label="Password"
+            type="password"
+            placeholder="Create a password"
+            [value]="password()"
+            (valueChange)="password.set($event)"
+          />
+          <ds-input
+            label="Confirm Password"
+            type="password"
+            placeholder="Confirm your password"
+            [value]="confirmPassword()"
+            (valueChange)="confirmPassword.set($event)"
+          />
+          <ds-checkbox
+            label="I agree to the Terms of Service"
+            [checked]="agreeToTerms()"
+            (checkedChange)="agreeToTerms.set($event)"
+          />
+        </ds-stack>
+      </ds-card-content>
+      <ds-card-footer>
+        <ds-stack [gap]="3">
+          <ds-button
+            [fullWidth]="true"
+            variant="primary"
+            (clicked)="handleRegister()"
+          >
+            Create Account
+          </ds-button>
+          <ds-text>
+            Already have an account? <a routerLink="/login">Sign in</a>
+          </ds-text>
+        </ds-stack>
+      </ds-card-footer>
+    </ds-card>
+  </div>
+</ds-container>

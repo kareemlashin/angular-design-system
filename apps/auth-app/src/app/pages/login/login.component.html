@@ -1,1 +1,51 @@
-<p>login works!</p>
+<ds-container>
+  <div class="login-page">
+    <ds-card>
+      <ds-card-header>
+        <ds-heading [level]="2">Sign In</ds-heading>
+      </ds-card-header>
+      <ds-card-content>
+        <ds-stack [gap]="4">
+          <ds-input
+            label="Email"
+            type="email"
+            placeholder="Enter your email"
+            [value]="email()"
+            (valueChange)="email.set($event)"
+          />
+          <ds-input
+            label="Password"
+            type="password"
+            placeholder="Enter your password"
+            [value]="password()"
+            (valueChange)="password.set($event)"
+          />
+          <ds-checkbox
+            label="Remember me"
+            [checked]="rememberMe()"
+            (checkedChange)="rememberMe.set($event)"
+          />
+        </ds-stack>
+      </ds-card-content>
+      <ds-card-footer>
+        <ds-stack [gap]="3">
+          <ds-button
+            [fullWidth]="true"
+            variant="primary"
+            (clicked)="handleLogin()"
+          >
+            Sign In
+          </ds-button>
+          <ds-stack [gap]="2" [direction]="'horizontal'">
+            <ds-text>
+              <a routerLink="/forgot-password">Forgot password?</a>
+            </ds-text>
+            <ds-text>
+              <a routerLink="/register">Create account</a>
+            </ds-text>
+          </ds-stack>
+        </ds-stack>
+      </ds-card-footer>
+    </ds-card>
+  </div>
+</ds-container>

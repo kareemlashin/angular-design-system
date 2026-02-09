@@ -1,1 +1,44 @@
-<p>audience-demographics works!</p>
+<ds-container>
+  <ds-stack [gap]="6">
+    <ds-heading [level]="1">Audience Demographics</ds-heading>
+    <ds-text>Detailed breakdown of your user demographics</ds-text>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
+      <ds-card>
+        <ds-card-header>
+          <ds-heading [level]="3">By Country</ds-heading>
+        </ds-card-header>
+        <ds-card-content>
+          <ds-table-container
+            [data]="countryData"
+            [columns]="countryColumns"
+          />
+        </ds-card-content>
+      </ds-card>
+
+      <ds-card>
+        <ds-card-header>
+          <ds-heading [level]="3">By Device</ds-heading>
+        </ds-card-header>
+        <ds-card-content>
+          <ds-table-container
+            [data]="deviceData"
+            [columns]="deviceColumns"
+          />
+        </ds-card-content>
+      </ds-card>
+
+      <ds-card>
+        <ds-card-header>
+          <ds-heading [level]="3">By Browser</ds-heading>
+        </ds-card-header>
+        <ds-card-content>
+          <ds-table-container
+            [data]="browserData"
+            [columns]="browserColumns"
+          />
+        </ds-card-content>
+      </ds-card>
+    </div>
+  </ds-stack>
+</ds-container>

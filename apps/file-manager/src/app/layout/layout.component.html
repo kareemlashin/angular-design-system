@@ -1,1 +1,11 @@
-<p>layout works!</p>
+<ds-sidenav-container
+  [items]="menuItems"
+  (itemSelected)="handleNavigate($event)"
+>
+  <main>
+    <router-outlet />
+  </main>
+</ds-sidenav-container>
+
+<ds-toast-container />
+<ds-modal-outlet />

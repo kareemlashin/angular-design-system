@@ -1,1 +1,57 @@
-<p>dashboard works!</p>
+<ds-container>
+  <ds-stack [gap]="6">
+    <ds-heading [level]="1">Dashboard</ds-heading>
+    <ds-text>Ecommerce overview and key metrics</ds-text>
+
+    <div class="stats-grid">
+      <ds-card>
+        <ds-card-content>
+          <ds-stack [gap]="2">
+            <ds-text [size]="'sm'" [color]="'muted'">Total Revenue</ds-text>
+            <ds-heading [level]="2">$124,567</ds-heading>
+            <ds-text [size]="'sm'" [color]="'success'">+12% from last month</ds-text>
+          </ds-stack>
+        </ds-card-content>
+      </ds-card>
+
+      <ds-card>
+        <ds-card-content>
+          <ds-stack [gap]="2">
+            <ds-text [size]="'sm'" [color]="'muted'">Total Orders</ds-text>
+            <ds-heading [level]="2">3,456</ds-heading>
+            <ds-text [size]="'sm'" [color]="'success'">+8% from last month</ds-text>
+          </ds-stack>
+        </ds-card-content>
+      </ds-card>
+
+      <ds-card>
+        <ds-card-content>
+          <ds-stack [gap]="2">
+            <ds-text [size]="'sm'" [color]="'muted'">Total Customers</ds-text>
+            <ds-heading [level]="2">12,345</ds-heading>
+            <ds-text [size]="'sm'" [color]="'success'">+15% from last month</ds-text>
+          </ds-stack>
+        </ds-card-content>
+      </ds-card>
+
+      <ds-card>
+        <ds-card-content>
+          <ds-stack [gap]="2">
+            <ds-text [size]="'sm'" [color]="'muted'">Avg Order Value</ds-text>
+            <ds-heading [level]="2">$36.04</ds-heading>
+            <ds-text [size]="'sm'" [color]="'muted'">-2% from last month</ds-text>
+          </ds-stack>
+        </ds-card-content>
+      </ds-card>
+    </div>
+
+    <ds-card>
+      <ds-card-header>
+        <ds-heading [level]="3">Recent Orders</ds-heading>
+      </ds-card-header>
+      <ds-card-content>
+        <ds-table-container [columns]="recentOrdersColumns" [data]="recentOrders" />
+      </ds-card-content>
+    </ds-card>
+  </ds-stack>
+</ds-container>

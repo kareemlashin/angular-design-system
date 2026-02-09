@@ -1,1 +1,19 @@
-<p>page-analytics works!</p>
+<ds-container>
+  <ds-stack [gap]="6">
+    <ds-heading [level]="1">Page Analytics</ds-heading>
+    <ds-text>Detailed performance metrics for individual pages</ds-text>
+
+    <ds-card>
+      <ds-card-header>
+        <ds-heading [level]="3">Page Performance</ds-heading>
+      </ds-card-header>
+      <ds-card-content>
+        <ds-table-container
+          [data]="pageData"
+          [columns]="columns"
+          [pageSize]="10"
+        />
+      </ds-card-content>
+    </ds-card>
+  </ds-stack>
+</ds-container>

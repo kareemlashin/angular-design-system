@@ -1,1 +1,18 @@
-<p>traffic-sources works!</p>
+<ds-container>
+  <ds-stack [gap]="6">
+    <ds-heading [level]="1">Traffic Sources</ds-heading>
+    <ds-text>Analysis of where your visitors are coming from</ds-text>
+
+    <ds-card>
+      <ds-card-header>
+        <ds-heading [level]="3">Source Performance</ds-heading>
+      </ds-card-header>
+      <ds-card-content>
+        <ds-table-container
+          [data]="sourceData"
+          [columns]="columns"
+        />
+      </ds-card-content>
+    </ds-card>
+  </ds-stack>
+</ds-container>

@@ -1,1 +1,9 @@
-<p>layout works!</p>
+<div class="layout">
+  <ds-sidenav-container [items]="menuItems" (itemClick)="onMenuItemClick($event)">
+    <main class="layout__main">
+      <router-outlet />
+    </main>
+  </ds-sidenav-container>
+  <ds-toast-container />
+  <ds-modal-outlet />
+</div>

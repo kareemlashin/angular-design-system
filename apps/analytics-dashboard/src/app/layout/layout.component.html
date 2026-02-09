@@ -1,1 +1,8 @@
-<p>layout works!</p>
+<div class="layout">
+  <ds-sidenav-container [items]="menuItems" />
+  <main class="layout__content">
+    <router-outlet />
+  </main>
+</div>
+<ds-toast-container />
+<ds-modal-outlet />
