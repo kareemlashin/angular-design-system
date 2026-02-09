@@ -1,0 +1,93 @@
+@import '../../../../../tokens/src/lib/scss/_tokens.scss';
+
+.ds-sidenav__backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: $z-index-modal - 1;
+  animation: fadeIn $duration-fast $ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ds-sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: $z-index-modal;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-surface;
+  box-shadow: $shadow-xl;
+  transition: transform $duration-normal $ease-out;
+  overflow: hidden;
+
+  &.ds-sidenav--left {
+    left: 0;
+    transform: translateX(-100%);
+
+    &.ds-sidenav--open {
+      transform: translateX(0);
+    }
+  }
+
+  &.ds-sidenav--right {
+    right: 0;
+    transform: translateX(100%);
+
+    &.ds-sidenav--open {
+      transform: translateX(0);
+    }
+  }
+}
+
+.ds-sidenav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-6;
+  border-bottom: 1px solid $color-border;
+  flex-shrink: 0;
+}
+
+.ds-sidenav__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: $border-radius-md;
+  background: transparent;
+  color: $color-text-secondary;
+  cursor: pointer;
+  transition: all $duration-fast $ease-out;
+
+  &:hover {
+    background-color: $color-background-secondary;
+    color: $color-text-primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.ds-sidenav__content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ds-sidenav__footer {
+  border-top: 1px solid $color-border;
+  flex-shrink: 0;
+
+  &:empty {
+    display: none;
+  }
+}

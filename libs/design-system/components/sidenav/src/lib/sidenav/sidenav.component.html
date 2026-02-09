@@ -1,1 +1,42 @@
-<p>Sidenav works!</p>
+@if (open() && overlay()) {
+  <div
+    class="ds-sidenav__backdrop"
+    (click)="handleBackdropClick()"
+    aria-hidden="true"
+  ></div>
+}
+
+<nav
+  class="ds-sidenav"
+  [class.ds-sidenav--open]="open()"
+  [class.ds-sidenav--left]="position() === 'left'"
+  [class.ds-sidenav--right]="position() === 'right'"
+  [style.width]="width()"
+  [attr.aria-label]="ariaLabel()"
+  [attr.aria-hidden]="!open()"
+  role="navigation"
+  (keydown)="handleKeydown($event)"
+>
+  <div class="ds-sidenav__header">
+    <ng-content select="[ds-sidenav-header]"></ng-content>
+    <button
+      class="ds-sidenav__close"
+      (click)="close()"
+      aria-label="Close navigation"
+      type="button"
+    >
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div class="ds-sidenav__content">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="ds-sidenav__footer">
+    <ng-content select="[ds-sidenav-footer]"></ng-content>
+  </div>
+</nav>
